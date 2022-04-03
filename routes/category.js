@@ -31,7 +31,26 @@ router.post('/', async (req, res) => {
 })
 
 //update category
+router.put('/:id', async (req, res) => {
+    const updateCategory = await Category.findByIdAndUpdate(req.params.id, {
+        Name: req.body.Name
+    });
 
+    const result = await Category.findById(req.params.id);
 
+    return res.status(200).send({
+        message: "you have successfully update specific category",
+        data: result
+    })
+})
+
+//delete category
+router.delete('/:id', async (req, res) => {
+    const deleteCategory = await Category.findByIdAndRemove(req.params.id);
+
+    return res.status(200).send({
+        message: "you have successfully delete category document"
+    })
+})
 
 module.exports = router;

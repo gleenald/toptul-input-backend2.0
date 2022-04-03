@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 //post new detail-item
 router.post('/', async (req, res) => {
     const detail = new Detail({
-        Detail:{street:"Amir2", city:"Umam2", province:"Kahn2"}
+        Detail: { first: "Amir", middle: "Umam", last: "Kahn" }
     })
 
     saveDetail = await detail.save();
