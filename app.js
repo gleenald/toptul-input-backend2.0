@@ -11,7 +11,6 @@ require('dotenv/config');
 //Import router
 const CategoryRoute = require('./routes/category');
 const ItemRoute = require('./routes/item');
-const DetailRoute = require('./routes/detail');
 const UserRoute = require('./routes/user');
 
 //midleware-bodyparser
@@ -20,7 +19,6 @@ app.use(express.json());
 //midleware-router
 app.use('/category', CategoryRoute);
 app.use('/item', ItemRoute);
-app.use('/detail', DetailRoute);
 app.use('/user', UserRoute);
 
 //connect to db

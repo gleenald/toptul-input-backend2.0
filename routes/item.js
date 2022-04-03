@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
             Description: saveItem.Description,
             ItemNo: saveItem.ItemNo,
             Category: find_category,
-            Detail: find_detail
+            Detail: find_detail.Detail
         }
     })
 
