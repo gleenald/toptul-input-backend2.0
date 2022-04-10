@@ -5,6 +5,12 @@ const app = express();
 //Import Mongoose
 const mongoose = require('mongoose');
 
+//Import CORS
+const cors = require('cors');
+
+//Import Morgan
+const morgan = require('morgan');
+
 //Import dotenv
 require('dotenv/config');
 
@@ -15,6 +21,13 @@ const UserRoute = require('./routes/user');
 
 //midleware-bodyparser
 app.use(express.json());
+
+//midleware-cors
+app.use(cors())
+app.options("*", cors())
+
+//midleware-morgan
+app.use(morgan('tiny'))
 
 //midleware-router
 app.use('/category', CategoryRoute);
